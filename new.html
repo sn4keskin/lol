@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Dialogue</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        #dialogue-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #dialogue {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        #btnNext {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="dialogue-container">
+    <div id="dialogue">Welcome, Trainer! Are you ready for an adventure?</div>
+    <button id="btnNext" onclick="nextDialogue()">Next</button>
+</div>
+
+<script>
+    const dialogues = [
+        "Great! Let's choose your starter Pokémon.",
+        "Bulbasaur, Charmander, or Squirtle - who will you pick?",
+        "Congratulations! You and your Pokémon are ready to explore the world of Pokémon!"
+    ];
+
+    let currentDialogueIndex = 0;
+    const dialogueElement = document.getElementById('dialogue');
+
+    function nextDialogue() {
+        if (currentDialogueIndex < dialogues.length - 1) {
+            currentDialogueIndex++;
+            dialogueElement.textContent = dialogues[currentDialogueIndex];
+        }
+    }
+</script>
+
+</body>
+</html>
